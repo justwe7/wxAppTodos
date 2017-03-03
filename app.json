@@ -1,0 +1,13 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/detail/detail"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#3aa8db",
+    "navigationBarTitleText": "任务清单",
+    "navigationBarTextStyle":"white"
+  }
+}

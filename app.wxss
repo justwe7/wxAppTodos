@@ -1,0 +1,50 @@
+/**app.wxss**/
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #f1f2f4;
+} 
+.clearfix:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+
+/*添加的自定义字体文件*/
+@font-face {
+  font-family: 'iconfont';  /* project id 232552 */
+  src: url('//at.alicdn.com/t/font_9prwoko8cnxw29.eot');
+  src: url('//at.alicdn.com/t/font_9prwoko8cnxw29.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_9prwoko8cnxw29.woff') format('woff'),
+  url('//at.alicdn.com/t/font_9prwoko8cnxw29.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_9prwoko8cnxw29.svg#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-rili:before { content: "\e63a"; }
+
+.icon-duihuan:before { content: "\e65e"; }
+
+.icon-attachment:before { content: "\e776"; }
+
+.icon-tixing:before { content: "\e622"; }
+
+.icon-zhuyi:before { content: "\e625"; }
+
+.icon-shijian:before { content: "\e638"; }
+
+.icon-renwu:before { content: "\e63f"; }
+
+.icon-rili1:before { content: "\e72d"; }
+
+.icon--fabu:before { content: "\e608"; }

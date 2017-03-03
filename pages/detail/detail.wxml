@@ -1,0 +1,29 @@
+<!--logs.wxml-->
+<view class="container">
+  <checkbox-group class="setDate clearfix" bindchange="changeStatus" data-index="{{data.id}}">
+        <view class="finshed"><checkbox checked="{{data.finshed}}" color="#c1c8d0" /></view>
+        <view class="item_con">创建日期：{{data.time}}</view>
+  </checkbox-group>
+  <view class="content">
+    <view class="title">
+      <text class="flex1">内容：</text>
+      <!--<text class="flex7">{{data.value}}</text>-->
+      <input class="flex7" value="{{data.value}}" />
+      <input />
+    </view>
+    <view class="title">
+      <text class="flex1">日期：</text>
+      <text class="flex7">{{data.day}}</text>
+    </view>
+    <!--<view>时间：{{data.time}}</view>-->
+    <view class="status">
+      <text class="flex1">状态:</text>
+      <text class="flex7" wx:if="{{data.finshed}}">已完成</text>
+      <text class="flex7" wx:if="{{!data.finshed}}">未完成</text>
+    </view>
+    <view class="task_con">
+      <!--输入框-->
+      <textarea auto-height placeholder="描述" maxlength="-1" bindinput="addDetail" value="{{data.content}}"/>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,33 @@
+<view class="container">
+  <scroll-view scroll-y="true" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" class="tasks">
+    <!--新增任务-->
+    <checkbox-group bindchange="changeStatus" class="new_tasks clearfix" wx:for="{{TaskItems}}" hidden="{{item.finshed}}" data-index="{{item.id}}" bindtap="taskDetail" bindtouchstart="mytouchstart" bindtouchend="mytouchend">
+      <!--<view class="task_items clearfix">-->
+        <view class="item_checkbox"><checkbox value="{{item.value}}" checked="{{item.finshed}}"/></view>
+
+        <view class="item_con" data-index="{{item.id}}" >{{item.value}}</view>
+        
+        <view class="icon iconfont icon-renwu item_ico" hidden="{{!item.content}}" data-index="{{item.id}}" ></view>
+      <!--</view>-->
+    </checkbox-group>
+    <!--提示条-->
+    <view class="finish_tip">已完成</view>
+    <!--已完成任务-->
+    <checkbox-group class="finish_tasks clearfix" bindchange="changeStatus" wx:for="{{TaskItems}}" hidden="{{!item.finshed}}" data-index="{{item.id}}" bindtap="taskDetail" bindtouchstart="mytouchstart" bindtouchend="mytouchend">
+        <view class="item_checkbox"><checkbox color="#c1c8d0" data-hi="{{item.id}}" value="{{item.value}}"  checked="{{item.finshed}}"/></view>
+        <view class="item_con" data-index="{{item.id}}">{{item.value}}</view>
+        <view class="icon iconfont icon-renwu item_ico" hidden="{{!item.content}}" data-index="{{item.id}}"></view>
+    </checkbox-group>
+  </scroll-view>
+  <!--！任务输入框-->
+  <view class="task_inputBox">
+    <!--<view class="icon iconfont icon-rili1 task_date" ></view>-->
+    <picker class="icon iconfont icon-rili1 task_date" mode="date" value="{{date}}" start="2016/09/01" end="2017/09/01" bindchange="bindDateChange">
+    <view class="date_select">
+      <!--当前选择: {{date}}-->
+    </view>
+    </picker>
+    <input class="task_input" focus="{{focus}}" placeholder-style="color:#d1d4db" placeholder="准备做些什么？" bindinput="getInputTask" value="{{newTask}}"/>
+    <view class="icon iconfont icon--fabu task_create" bindtap="newTask"></view>
+  </view>
+</view>
