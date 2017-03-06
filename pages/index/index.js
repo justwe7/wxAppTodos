@@ -16,11 +16,7 @@ Page({
     // ],
     newTask: '',
     focus: false,
-    dateLimit: [
-      {minday: '2017/01/31'},
-      {maxday: '2017/06/31'}
-    ],
-    day: '暂未设置'
+    day: '点此设置'
   },
   onShareAppMessage() {
     return {
@@ -136,7 +132,6 @@ Page({
       TaskItems: AllDatas
     })
     wx.setStorageSync('tasksData', AllDatas);
-
   },
   getInputTask: function(e){//新建任务1 获取值
     this.setData({
@@ -160,7 +155,6 @@ Page({
       })
       return;
     }
-    console
     var dataID = wx.getStorageSync('dataID', AllDatas) || 0;//任务id  每次改变需要写入缓存
     let
     AllDatas = this.data.TaskItems;//所有设置的任务
@@ -170,23 +164,28 @@ Page({
     dataID++;//设置设置ID  并写入缓存
     wx.setStorageSync('dataID', dataID);
     
-    AllDatas.push(newDatas)
+    AllDatas.push(newDatas);
 
     this.setData({
       TaskItems: AllDatas,
-      newTask: ""
+      newTask: "",
+      day: '未限定日期'
     })
     wx.setStorageSync('tasksData', AllDatas);
   },
   showSelectDate(){//显示选择日期
     const date = new Date();
-    const cur_year = date.getFullYear();
-    const cur_month = date.getMonth() + 1;
+    const cur_day = date.getDate();
+    const now_year = date.getFullYear(),cur_year = date.getFullYear();
+    const now_month = date.getMonth() + 1,cur_month = date.getMonth() + 1;
     const weeks_ch = ['日', '一', '二', '三', '四', '五', '六'];
     this.calculateEmptyGrids(cur_year, cur_month);
     this.calculateDays(cur_year, cur_month);
     this.getSystemInfo();
     this.setData({
+      cur_day,
+      now_year,
+      now_month,
       cur_year,
       cur_month,
       weeks_ch,
@@ -199,7 +198,18 @@ Page({
     })
   },
   selectDay(ev){//选择指定日期
-    console.log(ev)
+    console.log(ev.currentTarget.dataset.idx)
+    this.setData({
+        cur_day: ev.currentTarget.dataset.idx+1
+    })
+  },
+  subSelectDate(){//确定指定的日期
+    let data = this.data;
+    let taskDay = data.cur_year + '年'+ data.cur_month + '月' + data.cur_day + '日';
+    this.setData({
+      dayHide: true,
+      day: taskDay
+    });
   },
 
 
@@ -214,11 +224,10 @@ Page({
       console.log(e);
     }
   },
-  getThisMonthDays(year, month) {
-    console.log(year)
+  getThisMonthDays(year, month) {//本年
     return new Date(year, month, 0).getDate();
   },
-  getFirstDayOfWeek(year, month) {
+  getFirstDayOfWeek(year, month) {//每月第一天》周
     return new Date(Date.UTC(year, month - 1, 1)).getDay();
   },
   calculateEmptyGrids(year, month) {
@@ -252,20 +261,6 @@ Page({
       days
     });
   },
-  // onLoad(options) {
-  //   const date = new Date();
-  //   const cur_year = date.getFullYear();
-  //   const cur_month = date.getMonth() + 1;
-  //   const weeks_ch = ['日', '一', '二', '三', '四', '五', '六'];
-  //   this.calculateEmptyGrids(cur_year, cur_month);
-  //   this.calculateDays(cur_year, cur_month);
-  //   this.getSystemInfo();
-  //   this.setData({
-  //     cur_year,
-  //     cur_month,
-  //     weeks_ch
-  //   })
-  // },
   handleCalendar(e) {
     const handle = e.currentTarget.dataset.handle;
     const cur_year = this.data.cur_year;
@@ -283,7 +278,8 @@ Page({
 
       this.setData({
         cur_year: newYear,
-        cur_month: newMonth
+        cur_month: newMonth,
+        cur_day: 1
       })
 
     } else {
@@ -299,7 +295,8 @@ Page({
 
       this.setData({
         cur_year: newYear,
-        cur_month: newMonth
+        cur_month: newMonth,
+        cur_day: 1
       })
     }
   }

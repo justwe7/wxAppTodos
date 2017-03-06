@@ -7,13 +7,13 @@
   <view class="content">
     <view class="title">
       <text class="flex1">内容：</text>
-      <!--<text class="flex7">{{data.value}}</text>-->
-      <input class="flex7" value="{{data.value}}" />
-      <input />
+      <text class="flex7">{{data.value}}</text>
+      <!--<input class="flex7" value="{{data}}" />-->
+      <!--<input />-->
     </view>
     <view class="title">
-      <text class="flex1">日期：</text>
-      <text class="flex7">{{data.day}}</text>
+      <text class="flex1">截止：</text>
+      <text class="flex7" bindtap="showSelectDate">{{day || data.day}}</text>
     </view>
     <!--<view>时间：{{data.time}}</view>-->
     <view class="status">
@@ -27,3 +27,37 @@
     </view>
   </view>
 </view>
+
+<scroll-view scroll-y="true" class="date_box flex box box-tb box-pack-center box-align-center" style="height: {{scrollViewHeight*2}}rpx" hidden="{{dayHide}}">
+  <view class="calendar pink-color box box-tb">
+        <view class="now_select_day box">
+            <view class="date">
+                <view class="now_date_year">{{cur_year}}</view>
+                <view class="now_date_day">{{cur_month}}月{{cur_day}}日</view>
+            </view>
+            <view class="box date_control">
+                <view class="flex" catchtap="handleCalendar" data-handle="prev">
+                    <view class="icon iconfont icon-zuojiantou font60rpx"></view>
+                </view>
+                <view class="flex" catchtap="handleCalendar" data-handle="next">
+                    <view class="icon iconfont icon-youjiantou font60rpx"></view>
+                </view>
+            </view>
+        </view>
+
+        <view class="weeks box box-lr box-pack-center box-align-center">
+            <view class="flex week fs28" wx:for="{{weeks_ch}}" wx:key="{{index}}" data-idx="{{index}}">{{item}}</view>
+        </view>
+        <view class="days box box-lr box-wrap">
+            <view wx:if="{{hasEmptyGrid}}" class="grid white-color box box-align-center box-pack-center" wx:for="{{empytGrids}}" wx:key="{{index}}" data-idx="{{index}}">
+            </view>
+            <view catchtap="selectDay" class="grid white-color box box-align-center box-pack-center" wx:for="{{days}}" wx:key="{{index}}" data-idx="{{index}}">
+                <view class="day {{index+1 == cur_day ? 'border-radius current-bg' : ''}} box box-align-center box-pack-center">{{item}}</view>
+            </view>
+        </view>
+        <view class="box box-align-center box-pack-center material_day">
+            <view class="flex" catchtap="hideSelectDate">取消</view>
+            <view class="flex" catchtap="subSelectDate" data-index="{{data.id}}">确定</view>
+        </view>
+    </view>
+</scroll-view>

@@ -16,11 +16,11 @@
 /*添加的自定义字体文件*/
 @font-face {
   font-family: 'iconfont';  /* project id 232552 */
-  src: url('//at.alicdn.com/t/font_9prwoko8cnxw29.eot');
-  src: url('//at.alicdn.com/t/font_9prwoko8cnxw29.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_9prwoko8cnxw29.woff') format('woff'),
-  url('//at.alicdn.com/t/font_9prwoko8cnxw29.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_9prwoko8cnxw29.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_kebmh9due8iod2t9.eot');
+  src: url('//at.alicdn.com/t/font_kebmh9due8iod2t9.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_kebmh9due8iod2t9.woff') format('woff'),
+  url('//at.alicdn.com/t/font_kebmh9due8iod2t9.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_kebmh9due8iod2t9.svg#iconfont') format('svg');
 }
 
 .iconfont {
@@ -48,6 +48,10 @@
 .icon-rili1:before { content: "\e72d"; }
 
 .icon--fabu:before { content: "\e608"; }
+
+.icon-youjiantou:before { content: "\e600"; }
+
+.icon-zuojiantou:before { content: "\e601"; }
 
 
 
@@ -144,10 +148,13 @@
     flex-shrink: 1;
 }
 .calendar {
-  width: 90%;
+  width: 80%;
   margin: 15vh auto;
   background: #fff;
-  border-radius: 9rpx;
+  border-radius: 0 0 9rpx 9rpx;
+  overflow: hidden;
+  position: relative;
+  z-index: 999;
 }
 .bg {
   background-image: linear-gradient(to bottom, #faefe7, #ffcbd7);
@@ -199,9 +206,10 @@
     text-align: center;
 }
 .weeks {
+    margin-top: 10rpx;
     height: 50rpx;
     line-height: 50rpx;
-    opacity: 0.5
+    background: #fff;
 }
 .week {
     text-align: center;
@@ -210,7 +218,7 @@
     height: 500rpx;
 }
 .grid {
-    width: 96rpx;
+    width: 85.99888rpx;
 }
 .day {
     width: 60rpx;
@@ -322,4 +330,36 @@
 .right-border-radius {
     border-top-right-radius: 20rpx;
     border-bottom-right-radius: 20rpx;
+}
+
+.now_select_day{
+    padding: 15rpx 20rpx 10rpx;
+    background: #617fde;
+    color: #fff;
+}
+.now_select_day{
+    flex-grow: 1;
+}
+.date_control{
+    flex-grow: 4;
+    text-align: center;
+    line-height: 2;
+    -webkit-box-align: end;
+}
+.font60rpx{
+    font-size: 54rpx;
+}
+
+.now_date_year{
+    font-size: 36rpx;
+}
+.now_date_day{
+    font-size: 56rpx;
+}
+
+.material_day{
+    padding: 20rpx 0 30rpx 0;
+    text-align: center;
+    font-size: 30rpx;
+    color: #617fde;
 }
