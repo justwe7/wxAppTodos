@@ -70,7 +70,6 @@ Page({
   },
 
   showSelectDate(){//显示选择日期
-  console.log(99)
     const date = new Date();
     const cur_day = date.getDate();
     const now_year = date.getFullYear(),cur_year = date.getFullYear();
@@ -88,25 +87,27 @@ Page({
       weeks_ch,
       dayHide: false
     })
+    this.aniShow();
   },
   hideSelectDate(){//隐藏选择日期
     this.setData({
       dayHide: true
     })
+    this.aniHide();
   },
   selectDay(ev){//选择指定日期
-    console.log(ev.currentTarget.dataset.idx)
     this.setData({
         cur_day: ev.currentTarget.dataset.idx+1
     })
   },
   subSelectDate(e){//确定指定的日期
     let data = this.data;
-    let taskDay = data.cur_year + '年'+ data.cur_month + '月' + data.cur_day + '日';
+    let taskDay = data.cur_year + '/'+ data.cur_month + '/' + data.cur_day;
     this.setData({
       dayHide: true,
       day: taskDay,
     });
+    this.aniHide();
     
     let AllDatas = wx.getStorageSync('tasksData');
     let index = e.target.dataset.index;//当前点击的对象在全局列表中的index
@@ -124,7 +125,26 @@ Page({
     }*/
     wx.setStorageSync('tasksData', AllDatas);
   },
-
+  aniShow(){
+    var animation = wx.createAnimation({
+      duration: 300
+    })
+    this.animation = animation
+    animation.opacity(1).step();
+    this.setData({
+      animationData:animation.export()
+    })
+  },
+  aniHide(){
+    var animation = wx.createAnimation({
+      duration: 300
+    })
+    this.animation = animation
+    animation.opacity(0).step();
+    this.setData({
+      animationData:animation.export()
+    })
+  },
 
 
   getSystemInfo() {

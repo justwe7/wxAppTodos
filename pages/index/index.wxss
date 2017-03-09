@@ -14,8 +14,14 @@
 .new_tasks{
   padding: 0 40rpx;
   background-color: #fff;
+  height: 100rpx;
   line-height: 100rpx;
   color: #405165;
+  border-bottom: 2rpx solid #eee; 
+}
+.new_tasks:last-of-type{
+  border: 0;
+  background: red;
 }
 .new_tasks:active{
   background: #eaecf9;
@@ -39,17 +45,44 @@
 .item_con{
   /*flex-grow: 1;*/
   float: left;
-  width: 77%;
+  width: 75%;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
-.item_ico{
+.item_info{
+  display: flex;
+  flex-direction: column;
   float: right;
-  width: 13%;
+  width: 15%;
+  height: 100%;
+  /*overflow: hidden;*/
   text-align: right;
+}
+.item_ico{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 32rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  font-size: 32rpx;
   /*flex-grow: 1;*/
 }
+.item_info_day{
+  flex-grow: 1;
+  width: 100%;
+  line-height: 38rpx;
+  font-size: 24rpx;
+  white-space:nowrap;
+  display: flex;
+  /*text-overflow:ellipsis;*/
+  /*overflow:hidden;*/
+}
+.lineHight100rpx{
+  line-height: 100rpx;
+}
+
 /*尝试修改input未生效'*/
 .checkbox{
   /*-moz-appearance: normal;-webkit-appearance: normal; appearance: normal;
@@ -72,8 +105,10 @@
 .finish_tasks{
   padding: 0 40rpx;
   background-color: #fff;
+  height: 100rpx;
   line-height: 100rpx;
   color: #c1c8d0;
+  border-bottom: 2rpx solid #eee; 
 }
 .finish_tasks:active{
   background: #eaecf9;

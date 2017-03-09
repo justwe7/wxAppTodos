@@ -38,7 +38,7 @@ Page({
     this.setData({
       TaskItems: wx.getStorageSync('tasksData') || []
     })
-    console.log(common.formatTime(new Date()).split(' ')[0])
+    // console.log(common.formatTime(new Date()).split(' ')[0])
     
     //当小程序启动，或从后台进入前台显示，会触发 onShow
   },
@@ -169,7 +169,7 @@ Page({
     this.setData({
       TaskItems: AllDatas,
       newTask: "",
-      day: '未限定日期'
+      day: '点此设置'
     })
     wx.setStorageSync('tasksData', AllDatas);
   },
@@ -191,27 +191,48 @@ Page({
       weeks_ch,
       dayHide: false
     })
+    this.aniShow();
   },
   hideSelectDate(){//隐藏选择日期
     this.setData({
       dayHide: true
     })
+    this.aniHide();
   },
   selectDay(ev){//选择指定日期
-    console.log(ev.currentTarget.dataset.idx)
     this.setData({
         cur_day: ev.currentTarget.dataset.idx+1
     })
   },
   subSelectDate(){//确定指定的日期
     let data = this.data;
-    let taskDay = data.cur_year + '年'+ data.cur_month + '月' + data.cur_day + '日';
+    let taskDay = data.cur_year + '/'+ data.cur_month + '/' + data.cur_day;
     this.setData({
       dayHide: true,
       day: taskDay
     });
+    this.aniHide();
   },
-
+  aniShow(){
+    var animation = wx.createAnimation({
+      duration: 300
+    })
+    this.animation = animation
+    animation.opacity(1).step();
+    this.setData({
+      animationData:animation.export()
+    })
+  },
+  aniHide(){
+    var animation = wx.createAnimation({
+      duration: 300
+    })
+    this.animation = animation
+    animation.opacity(0).step();
+    this.setData({
+      animationData:animation.export()
+    })
+  },
 
 
   getSystemInfo() {

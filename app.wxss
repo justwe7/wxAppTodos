@@ -155,6 +155,7 @@
   overflow: hidden;
   position: relative;
   z-index: 999;
+  opacity: 0;
 }
 .bg {
   background-image: linear-gradient(to bottom, #faefe7, #ffcbd7);
