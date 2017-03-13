@@ -167,6 +167,7 @@ Page({
     AllDatas.push(newDatas);
 
     this.setData({
+      cur_day: false,
       TaskItems: AllDatas,
       newTask: "",
       day: '点此设置'
@@ -195,6 +196,7 @@ Page({
   },
   hideSelectDate(){//隐藏选择日期
     this.setData({
+      cur_day: false,
       dayHide: true
     })
     this.aniHide();

@@ -66,6 +66,9 @@ Page({
         }
       })
     }
+    this.setData({
+      data: thisData
+    });
     wx.setStorageSync('tasksData', AllDatas);
   },
 

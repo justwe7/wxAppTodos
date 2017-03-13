@@ -16,11 +16,11 @@
 /*添加的自定义字体文件*/
 @font-face {
   font-family: 'iconfont';  /* project id 232552 */
-  src: url('//at.alicdn.com/t/font_kebmh9due8iod2t9.eot');
-  src: url('//at.alicdn.com/t/font_kebmh9due8iod2t9.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_kebmh9due8iod2t9.woff') format('woff'),
-  url('//at.alicdn.com/t/font_kebmh9due8iod2t9.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_kebmh9due8iod2t9.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_bwc1lmdi2mi8jjor.eot');
+  src: url('//at.alicdn.com/t/font_bwc1lmdi2mi8jjor.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_bwc1lmdi2mi8jjor.woff') format('woff'),
+  url('//at.alicdn.com/t/font_bwc1lmdi2mi8jjor.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_bwc1lmdi2mi8jjor.svg#iconfont') format('svg');
 }
 
 .iconfont {
@@ -49,10 +49,71 @@
 
 .icon--fabu:before { content: "\e608"; }
 
+.icon-rili-1:before { content: "\e602"; }
+
+.icon-rili-2:before { content: "\e603"; }
+
+.icon-rili-4:before { content: "\e604"; }
+
+.icon-rili-3:before { content: "\e605"; }
+
+.icon-rili-5:before { content: "\e606"; }
+
+.icon-rili-7:before { content: "\e607"; }
+
+.icon-rili-8:before { content: "\e609"; }
+
+.icon-rili-11:before { content: "\e60a"; }
+
+.icon-rili-9:before { content: "\e60b"; }
+
+.icon-rili-12:before { content: "\e60c"; }
+
+.icon-rili-10:before { content: "\e60d"; }
+
+.icon-rili-13:before { content: "\e60e"; }
+
+.icon-rili-14:before { content: "\e60f"; }
+
+.icon-rili-6:before { content: "\e610"; }
+
+.icon-rili-15:before { content: "\e611"; }
+
+.icon-rili-17:before { content: "\e612"; }
+
+.icon-rili-16:before { content: "\e613"; }
+
+.icon-rili-18:before { content: "\e614"; }
+
+.icon-rili-19:before { content: "\e615"; }
+
+.icon-rili-21:before { content: "\e616"; }
+
+.icon-rili-20:before { content: "\e617"; }
+
+.icon-rili-24:before { content: "\e618"; }
+
+.icon-rili-22:before { content: "\e619"; }
+
+.icon-rili-25:before { content: "\e61a"; }
+
+.icon-rili-23:before { content: "\e61b"; }
+
+.icon-rili-27:before { content: "\e61c"; }
+
+.icon-rili-26:before { content: "\e61d"; }
+
+.icon-rili-29:before { content: "\e61e"; }
+
+.icon-rili-28:before { content: "\e61f"; }
+
+.icon-rili-31:before { content: "\e620"; }
+
+.icon-rili-30:before { content: "\e621"; }
+
 .icon-youjiantou:before { content: "\e600"; }
 
 .icon-zuojiantou:before { content: "\e601"; }
-
 
 
 /* pages/calendar/calendar.wxss */

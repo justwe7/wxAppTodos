@@ -23,7 +23,8 @@
     </view>
     <view class="task_con">
       <!--输入框-->
-      <textarea auto-height placeholder="描述" maxlength="-1" bindinput="addDetail" value="{{data.content}}"/>
+      <textarea hidden="{{!dayHide}}" auto-height placeholder="描述" maxlength="-1" bindinput="addDetail" value="{{data.content}}"/>
+      <view hidden="{{dayHide}}" class="textarea_show">{{data.content}}</view>
     </view>
   </view>
 </view>

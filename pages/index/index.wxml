@@ -27,7 +27,8 @@
   </scroll-view>
   <!--！任务输入框-->
   <view class="task_inputBox">
-    <view class="icon iconfont icon-rili1 task_date" bindtap="showSelectDate"></view>
+    <view hidden="{{cur_day}}" class="icon iconfont icon-rili1 task_date" bindtap="showSelectDate"></view>
+    <view hidden="{{!cur_day}}" class="icon iconfont icon-rili-{{cur_day}} task_date" style="color: #617fde;" bindtap="showSelectDate"></view>
       <!--当前选择: {{date}}-->
     <!--<picker class="icon iconfont icon-rili1 task_date" mode="date" value="{{date}}" start="2016/09/01" end="2017/09/01" bindchange="bindDateChange">
     <view class="date_select">
