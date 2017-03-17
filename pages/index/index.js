@@ -32,6 +32,7 @@ Page({
     this.setData({
       TaskItems: wx.getStorageSync('tasksData') || []
     })
+
     // wx.clearStorageSync()//清空下缓存
   },
   onShow: function () {
@@ -40,6 +41,18 @@ Page({
     })
     // console.log(common.formatTime(new Date()).split(' ')[0])
     
+    wx.getUserInfo({
+      success: function(res) {
+        var userInfo = res.userInfo
+        var nickName = userInfo.nickName
+        var avatarUrl = userInfo.avatarUrl
+        var gender = userInfo.gender //性别 0：未知、1：男、2：女 
+        var province = userInfo.province
+        var city = userInfo.city
+        var country = userInfo.country
+        console.info(userInfo)
+      }
+    })
     //当小程序启动，或从后台进入前台显示，会触发 onShow
   },
   upper: function(e) {
