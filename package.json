@@ -4,8 +4,8 @@
   "description": "个税",
   "main": "app.js",
   "scripts": {
-    "build": "webpack --config webpack.config.js",
-    "dev": "node ./dev-server.js"
+    "dev": "webpack --config webpack.development.config.js",
+    "build": "webpack --config webpack.config.production.js "
   },
   "repository": {
     "type": "git",
@@ -23,14 +23,13 @@
   "devDependencies": {
     "copy-webpack-plugin": "^5.0.3",
     "css-loader": "^3.0.0",
-    "express": "^4.17.1",
-    "http-proxy-middleware": "^0.19.1",
+    "globby": "^9.2.0",
     "mini-css-extract-plugin": "^0.7.0",
     "node-sass": "^4.12.0",
-    "portfinder": "^1.0.20",
     "sass-loader": "^7.1.0",
+    "sass-resources-loader": "^2.0.1",
     "webpack-cli": "^3.3.4",
-    "webpack-dev-middleware-hard-disk": "^1.12.1",
-    "webpack-fix-style-only-entries": "^0.3.0"
+    "webpack-fix-style-only-entries": "^0.3.0",
+    "webpack-merge": "^4.2.1"
   }
 }
