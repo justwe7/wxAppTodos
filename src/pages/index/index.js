@@ -19,6 +19,8 @@ Page({
     day: '点此设置'
   },
   onShareAppMessage() {
+    console.log(999);
+    
     return {
       title: '小程序任务提醒',
       desc: '任务列表',

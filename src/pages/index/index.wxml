@@ -13,6 +13,7 @@
         </view>
       <!--</view>-->
     </checkbox-group>
+    <image src="/static/img/2.png" mode="aspectFit"></image>
     <!--提示条-->
     <view class="finish_tip">已完成</view>
     <!--已完成任务-->
