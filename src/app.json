@@ -1,14 +1,18 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/detail/detail",
-    "pages/logs/logs"
+    "pages/index/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#3aa8db",
     "navigationBarTitleText": "任务清单",
     "navigationBarTextStyle": "white"
+  },
+  "usingComponents": {
+    "van-button": "/lib/vant-weapp/button/index",
+    "van-cell": "/lib/vant-weapp/cell/index",
+    "van-cell-group": "/lib/vant-weapp/cell-group/index",
+    "van-field": "/lib/vant-weapp/field/index"
   },
   "sitemapLocation": "sitemap.json"
 }

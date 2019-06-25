@@ -8,7 +8,6 @@ const ENTRY_PATH = ["./src/*.scss", "./src/pages/**/**/*.scss"];
 
 module.exports = {
   entry: getEntries(ENTRY_PATH),
-  // entry: ["./src/pages/detail/detail.scss", "./src/pages/index/index.scss"],
   output: {
     path: path.join(__dirname, "/dist")
   },
@@ -49,7 +48,7 @@ module.exports = {
       {
         from: "**/*",
         to: "",
-        ignore: ["*.scss", "pages/**/*.png"],
+        ignore: ["*.scss", "pages/**/*.png", "pages/**/*.jpg", "pages/**/*.jpeg"],
         context: "src/"
       }
     ])
