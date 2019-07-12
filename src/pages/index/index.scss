@@ -1,7 +1,18 @@
-.index {
-  color: #000;
-  background: url(./1.png)
-}
-.finish_tip {
-  color: $red;
+.container {
+  // background-color: $lightblue;
+  width: 100vw;
+  min-height: 100vh;
+  background-image: linear-gradient($blue, $bg);
+  box-sizing: border-box;
+  .g-main {
+    width: 90%;
+    min-height: 70vh;
+    @extend %centerblock;
+    background-color: $bg;
+    border-radius: 7rpx;
+    overflow: hidden;
+  }
+  /* .o-tab {
+    border-radius: 7rpx;
+  } */
 }

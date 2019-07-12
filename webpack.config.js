@@ -4,7 +4,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin"); // 复制文件
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // 单独打包样式文件
 const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries"); //删除多余js
 
-const ENTRY_PATH = ["./src/*.scss", "./src/pages/**/**/*.scss"];
+const ENTRY_PATH = ["./src/*.scss", "./src/pages/**/**/*.scss", "./src/components/**/**/*.scss"];
 
 module.exports = {
   entry: getEntries(ENTRY_PATH),

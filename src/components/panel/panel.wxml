@@ -1,0 +1,8 @@
+<view class="panel">
+ 
+  <!-- <slot name="header"></slot> -->
+  <view class="body">
+    <slot>我是内容</slot>
+  </view>
+  <!-- <slot name="after"></slot> -->
+</view>

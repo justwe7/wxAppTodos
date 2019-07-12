@@ -4,8 +4,8 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#3aa8db",
-    "navigationBarTitleText": "任务清单",
+    "navigationBarBackgroundColor": "#2EA4FF",
+    "navigationBarTitleText": "money计算器",
     "navigationBarTextStyle": "white"
   },
   "usingComponents": {

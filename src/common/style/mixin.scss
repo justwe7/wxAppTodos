@@ -1,6 +1,13 @@
 @charset "utf-8";
 $red: black;
 
+$blue: #2EA4FF;
+$lightblue: #26C5FF;
+$black: #292D0C;
+$danger: #FFBE40;
+$bg: #FCFFFF;
+
+
 @mixin bg-image($url) {
   //设置图标
   background-image: url($url + "@2x.png");
