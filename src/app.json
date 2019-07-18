@@ -5,7 +5,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#2EA4FF",
-    "navigationBarTitleText": "money计算器",
+    "navigationBarTitleText": "财神计算器",
     "navigationBarTextStyle": "white"
   },
   "usingComponents": {

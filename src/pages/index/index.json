@@ -8,6 +8,8 @@
     "van-loading": "/lib/vant-weapp/loading/index",
     "van-tab": "/lib/vant-weapp/tab/index",
     "van-tabs": "/lib/vant-weapp/tabs/index",
-    "van-panel": "/lib/vant-weapp/panel/index"
+    "van-icon": "/lib/vant-weapp/icon/index",
+    "xx-panel": "/components/panel/panel",
+    "van-notify": "/lib/vant-weapp/notify/index"
   }
 }

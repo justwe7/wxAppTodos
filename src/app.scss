@@ -73,6 +73,12 @@ $mtArr: 4 10 16 18 19 20 28 30 32 40 46 48 50 60 100;
     margin-top: $val + rpx;
   }
 }
+$mtArr: 4 10 16 18 19 20 28 30 32 40 46 48 50 60 100;
+@each $val in $mtArr {
+  .f-pt-#{$val} {
+    padding-top: $val + rpx;
+  }
+}
 
 /* font */
 

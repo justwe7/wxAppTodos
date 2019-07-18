@@ -5,18 +5,26 @@
 }
 .header {
   padding: 20rpx 30rpx;
+  overflow: hidden;
   .title {
     display: flex;
-    font-size: 28rpx;
+    font-size: 26rpx;
     color: #333;
+    justify-content: space-between;
+    .extra {
+      font-size: 0.8em;
+    }
   }
   .desc {
     padding-top: 10rpx;
-    font-size: 24rpx;
+    font-size: 22rpx;
     color: #999;
   }
 }
 .body {
-  // padding: 10rpx 15rpx;
-  @include border-1px-b(#ccc, 100%, 3%, 100%)
+  padding: 1rpx;
+  // padding: 30rpx;
+  font-size: 30rpx;
+  @include border-1px-b(#ccc, 100%, 3%, 100%, before);
+  @include border-1px-b(#ccc);
 }

@@ -6,6 +6,7 @@
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
+		"nodeModules": false,
 		"autoAudits": false,
 		"checkInvalidKey": true
 	},

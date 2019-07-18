@@ -1,11 +1,17 @@
+import Notify from "../../lib/vant-weapp/notify/notify";
+/* import Notify from 'path/to/vant-weapp/dist/notify/notify';
+
+Notify('通知内容');
+<van-notify id="van-notify" /> */
 Page({
   data: {
-    money: "",
-    income: ""
+    income: "",
+    bsFive: "",
+    exempt: ""
   },
-  onChange(event) {
+  onChangeIncome(event) {
     this.setData({
-      money: event.detail
+      income: event.detail
     });
   },
   handleReset() {
@@ -13,14 +19,13 @@ Page({
       money: ""
     });
   },
-  handleGetReal() {
-    console.log(this.data.money);
-  },
-  onChangeTab(e) {
+  onChange5(e) {
     console.log(e);
   },
-  handleIncome(e) {
+  onChangeExempt(e) {
     console.log(e);
-    
+  },
+  handleTip() {
+    Notify("实际工资基数: (避税可能导致缴税基数与实际工资有偏差)");
   }
 });

@@ -4,7 +4,8 @@ const CopyWebpackPlugin = require("copy-webpack-plugin"); // 复制文件
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // 单独打包样式文件
 const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries"); //删除多余js
 
-const ENTRY_PATH = ["./src/*.scss", "./src/pages/**/**/*.scss", "./src/components/**/**/*.scss"];
+const ENTRY_PATH = ["./src/**/*.scss"];
+// const ENTRY_PATH = ["./src/**/*.scss", "./src/pages/**/*.js"];
 
 module.exports = {
   entry: getEntries(ENTRY_PATH),
@@ -29,7 +30,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-        loader: 'url-loader',
+        loader: "url-loader",
         options: {
           limit: 100000
         }
@@ -48,7 +49,12 @@ module.exports = {
       {
         from: "**/*",
         to: "",
-        ignore: ["*.scss", "pages/**/*.png", "pages/**/*.jpg", "pages/**/*.jpeg"],
+        ignore: [
+          "*.scss",
+          "pages/**/*.png",
+          "pages/**/*.jpg",
+          "pages/**/*.jpeg"
+        ],
         context: "src/"
       }
     ])

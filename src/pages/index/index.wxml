@@ -1,39 +1,30 @@
+<van-notify id="van-notify" backgroundColor="#FFBE40" color="#333" />
 <view class="container f-wing-space">
   <view class="g-main">
-    <van-tabs bind:change="onChangeTab" color="#26C5FF" custom-class="o-tab">
-        <van-tab title="个税">
-          <my-panel use-extra="{{true}}">
-            
-            <view slot="extra">2huh</view>
-            <view slot="header">2huh</view>
-            lll
-          </my-panel>
-          <van-panel title="当月工资" desc="税前工资工资收入(元)">
-            <slot name="header">
-              <view>当月工资</view>
-            </slot>
-            联逻辑
-          </van-panel>
-          <!-- <van-cell-group>
-            <van-field
-              value="{{ income }}"
-              label="本月税前工资工资收入(元)"
-              placeholder=""
-              bind:change="handleIncome"
-            />
-          </van-cell-group> -->
-        </van-tab>
-        <van-tab title="年终奖">
-            年终奖
-        </van-tab>
+    <van-tabs bind:change="onChangeTab" color="#26C5FF">
+      <van-tab title="个税" class="f-pt-10">
+        <van-cell-group>
+          <xx-panel title="本月税前工资工资收入(元)" use-slot-extra>
+            <view slot="extra">
+              <van-icon name="question-o" bind:tap="handleTip"/>
+            </view>
+            <van-field border="{{ false }}" value="{{ income }}" placeholder="请输入税前工资" bind:change="onChangeIncome" />
+          </xx-panel>
+          <xx-panel title="五险一金(根据基本工资计算得出)" use-slot-extra>
+            <van-button slot="extra" size="mini">修改基数</van-button>
+            <van-field border="{{ false }}" value="{{ bsFive }}" placeholder="非必填" bind:change="onChange5" />
+          </xx-panel>
+          <xx-panel title="专项免除额度" use-slot-extra>
+            <van-button slot="extra" size="mini">帮我算</van-button>
+            <van-field border="{{ false }}" value="{{ exempt }}" placeholder="专项免除额度" bind:change="onChangeExempt" />
+          </xx-panel>
+        </van-cell-group>
+      </van-tab>
+      <van-tab title="年终奖">年终奖</van-tab>
     </van-tabs>
+
+    <view class="m-submit">
+      <van-button type="info" size="large">帮我算</van-button>
+    </view>
   </view>
-  <!-- <image src="/static/img/2.png" class="f-width-all"></image>
-    <van-cell-group border="{{ false }}">
-        <van-field value="{{ money }}" type="digit" placeholder="请输入" border="{{false}}" bind:change="onChange" clearable="{{true}}" />
-    </van-cell-group>
-    <view class="f-text-center">
-        <van-button type="info" class="f-mg-20" bind:tap="handleGetReal">计算</van-button>
-        <van-button type="default" plain class="f-mg-20" bind:tap="handleReset">重置</van-button>
-    </view> -->
 </view>
